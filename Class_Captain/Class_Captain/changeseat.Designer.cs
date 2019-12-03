@@ -107,7 +107,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("배달의민족 한나체 Pro", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.Location = new System.Drawing.Point(1168, 208);
+            this.label6.Location = new System.Drawing.Point(1155, 208);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(62, 64);
             this.label6.TabIndex = 6;
