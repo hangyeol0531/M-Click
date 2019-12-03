@@ -51,8 +51,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.deadline = new System.Windows.Forms.DateTimePicker();
             this.resetbtn = new System.Windows.Forms.Button();
+            this.deadline = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -136,6 +136,7 @@
             this.change.TabIndex = 5;
             this.change.Text = "상태 변경";
             this.change.UseVisualStyleBackColor = true;
+            this.change.Click += new System.EventHandler(this.change_Click);
             // 
             // rd1
             // 
@@ -281,13 +282,6 @@
             this.label5.TabIndex = 25;
             this.label5.Text = "이름";
             // 
-            // deadline
-            // 
-            this.deadline.Location = new System.Drawing.Point(753, 272);
-            this.deadline.Name = "deadline";
-            this.deadline.Size = new System.Drawing.Size(333, 25);
-            this.deadline.TabIndex = 26;
-            // 
             // resetbtn
             // 
             this.resetbtn.Font = new System.Drawing.Font("배달의민족 한나는 열한살", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -298,6 +292,13 @@
             this.resetbtn.Text = "리셋";
             this.resetbtn.UseVisualStyleBackColor = true;
             this.resetbtn.Click += new System.EventHandler(this.resetbtn_Click);
+            // 
+            // deadline
+            // 
+            this.deadline.Location = new System.Drawing.Point(753, 272);
+            this.deadline.Name = "deadline";
+            this.deadline.Size = new System.Drawing.Size(329, 25);
+            this.deadline.TabIndex = 26;
             // 
             // notication
             // 
@@ -361,7 +362,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker deadline;
         private System.Windows.Forms.Button resetbtn;
+        private System.Windows.Forms.DateTimePicker deadline;
     }
 }

@@ -21,9 +21,76 @@ namespace Class_Captain
         MySqlDataAdapter adapter1, adapter2;
         DataSet dataSet1, dataSet2;
 
+        private void sql_str_check(ref int cnt, ref string sql)
+        {
+            if (cnt == 0)
+            {
+                sql += " WHERE ";
+                cnt++;
+            }
+            else if (cnt >= 1)
+            {
+                sql += " AND ";
+            }
+        }
+        private void sql_str_check_up(ref int cnt, ref string sql)
+        {
+            if (cnt == 0)
+            {
+                sql += " ";
+                cnt++;
+            }
+            else if (cnt >= 1)
+            {
+                sql += ", ";
+            }
+        }
+
         private void updatebtn_Click(object sender, EventArgs e)
         {
-
+            if (num.Text != "" || name.Text != "" || deadline.Value.ToString("yyyy-MM-dd") != "")
+            {
+                if (num.Text == "")
+                {
+                    string sql = "UPDATE notification_name SET ";
+                    int cnt = 0;
+                    if (name.Text != "")
+                    {
+                        sql_str_check_up(ref cnt, ref sql);
+                        sql += "name=@name";
+                    }
+                    if (deadline.Value.ToString("yyyy-MM-dd") != "")
+                    {
+                        sql_str_check_up(ref cnt, ref sql);
+                        sql += "deadline=@deadline";
+                    }
+                    sql += " WHERE num=@num";
+                    //MessageBox.Show(sql);
+                    adapter2.UpdateCommand = new MySqlCommand(sql, conn);
+                    adapter2.UpdateCommand.Parameters.AddWithValue("@num", dataGridView2.SelectedRows[0].Cells["num"].Value);
+                    if (name.Text != "") adapter2.UpdateCommand.Parameters.AddWithValue("@name", name.Text);
+                    if (deadline.Text != "") adapter2.UpdateCommand.Parameters.AddWithValue("@deadline", deadline.Value.ToString("yyyy-MM-dd"));
+                    var selectedRows = dataGridView2.SelectedRows;
+                    int id;
+                    string filter;
+                    for (int i = 0; i < selectedRows.Count; i++)
+                    {
+                        id = (int)dataGridView2.SelectedRows[i].Cells["num"].Value;
+                        filter = "num =" + id;
+                        DataRow[] findRows = dataSet2.Tables["notification_name"].Select(filter);
+                        findRows[i]["num"] = id;
+                        if (name.Text != "") findRows[i]["name"] = (string)dataGridView2.SelectedRows[i].Cells["name"].Value;
+                        if (deadline.Value.ToString("yyyy-MM-dd") != "") findRows[i]["deadline"] = (DateTime)dataGridView2.SelectedRows[i].Cells["deadline"].Value;
+                    }
+                    adapter2.Update(dataSet2, "notification_name");
+                    //MessageBox.Show("UPDATE 완료!");
+                    dataSet2.Clear();
+                    adapter2.Fill(dataSet2, "notification_name");
+                    dataGridView2.DataSource = dataSet2.Tables["notification_name"];
+                }
+                else MessageBox.Show("고유ID는 변경할 수 없습니다.", "오류");
+            }
+            else MessageBox.Show("변경하실 값을 입력해주세요.", "오류");
         }
 
         private void deletebtn_Click(object sender, EventArgs e)
@@ -50,6 +117,66 @@ namespace Class_Captain
         {
             num.Clear();
             name.Clear();
+            //deadline.Value
+        }
+
+        private void change_Click(object sender, EventArgs e)
+        {
+            if (rd1.Checked)
+            {
+                if (num.Text != "" || name.Text != "" || deadline.Value.ToString("yyyy-MM-dd") != "")
+                {
+                    if (num.Text == "")
+                    {
+                        string sql = "UPDATE notification_name SET ";
+                        int cnt = 0;
+                        if (name.Text != "")
+                        {
+                            sql_str_check_up(ref cnt, ref sql);
+                            sql += "name=@name";
+                        }
+                        if (deadline.Value.ToString("yyyy-MM-dd") != "")
+                        {
+                            sql_str_check_up(ref cnt, ref sql);
+                            sql += "deadline=@deadline";
+                        }
+                        sql += " WHERE num=@num";
+                        //MessageBox.Show(sql);
+                        adapter2.UpdateCommand = new MySqlCommand(sql, conn);
+                        adapter2.UpdateCommand.Parameters.AddWithValue("@num", dataGridView2.SelectedRows[0].Cells["num"].Value);
+                        if (name.Text != "") adapter2.UpdateCommand.Parameters.AddWithValue("@name", name.Text);
+                        if (deadline.Text != "") adapter2.UpdateCommand.Parameters.AddWithValue("@deadline", deadline.Value.ToString("yyyy-MM-dd"));
+                        var selectedRows = dataGridView2.SelectedRows;
+                        int id;
+                        string filter;
+                        for (int i = 0; i < selectedRows.Count; i++)
+                        {
+                            id = (int)dataGridView2.SelectedRows[i].Cells["num"].Value;
+                            filter = "num =" + id;
+                            DataRow[] findRows = dataSet2.Tables["notification_name"].Select(filter);
+                            findRows[i]["num"] = id;
+                            if (name.Text != "") findRows[i]["name"] = (string)dataGridView2.SelectedRows[i].Cells["name"].Value;
+                            if (deadline.Value.ToString("yyyy-MM-dd") != "") findRows[i]["deadline"] = (DateTime)dataGridView2.SelectedRows[i].Cells["deadline"].Value;
+                        }
+                        adapter2.Update(dataSet2, "notification_name");
+                        //MessageBox.Show("UPDATE 완료!");
+                        dataSet2.Clear();
+                        adapter2.Fill(dataSet2, "notification_name");
+                        dataGridView2.DataSource = dataSet2.Tables["notification_name"];
+                    }
+                    else MessageBox.Show("고유ID는 변경할 수 없습니다.", "오류");
+                }
+                else MessageBox.Show("변경하실 값을 입력해주세요.", "오류");
+            }
+            else if (rd2.Checked)
+            {
+
+            }
+            else if (rd3.Checked)
+            {
+
+            }
+            else MessageBox.Show("안내장을 선택해주세요");
         }
 
         private void insertbtn_Click(object sender, EventArgs e)
