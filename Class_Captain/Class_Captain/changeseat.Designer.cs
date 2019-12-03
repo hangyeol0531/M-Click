@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(changeseat));
             this.front = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -264,11 +265,11 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 12);
+            this.button1.Location = new System.Drawing.Point(601, 102);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(181, 84);
+            this.button1.Size = new System.Drawing.Size(146, 60);
             this.button1.TabIndex = 21;
-            this.button1.Text = "start";
+            this.button1.Text = "자리 바꾸기!";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -299,8 +300,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.front);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "changeseat";
-            this.Text = "1";
+            this.Text = "changeseat";
             this.Load += new System.EventHandler(this.changeseat_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
