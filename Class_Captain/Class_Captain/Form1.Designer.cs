@@ -53,7 +53,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("배달의민족 을지로체 TTF", 48F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(229, 12);
+            this.label1.Location = new System.Drawing.Point(242, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(262, 93);
             this.label1.TabIndex = 1;
@@ -79,6 +79,7 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "자리 배치";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -89,13 +90,14 @@
             this.button3.TabIndex = 4;
             this.button3.Text = "안내장";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(702, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(713, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(55, 47);
+            this.pictureBox1.Size = new System.Drawing.Size(44, 46);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;

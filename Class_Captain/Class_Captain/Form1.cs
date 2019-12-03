@@ -18,10 +18,20 @@ namespace Class_Captain
             InitializeComponent();
         }
         MySqlConnection conn;
-        MySqlDataAdapter adapter1, adapter2, adapter3;
+        MySqlDataAdapter adapter1;
+        DataSet dataSet1;
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            notication form4 = new notication();
+            form4.Show();
+        }
 
-        DataSet dataSet1, dataSet2, dataSet3;
+        private void button2_Click(object sender, EventArgs e)
+        {
+            changeseat form3 = new changeseat();
+            form3.Show();
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -55,5 +65,6 @@ namespace Class_Captain
             adapter1.Fill(dataSet1, "student");
             dataGridView1.DataSource = dataSet1.Tables["student"];
         }
+
     }
 }
