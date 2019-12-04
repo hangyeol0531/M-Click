@@ -16,3 +16,4 @@ C:\WinForm_Class_Captain\Class_Captain\Class_Captain\obj\Debug\Class_Captain.pdb
 C:\WinForm_Class_Captain\Class_Captain\Class_Captain\obj\Debug\Class_Captain.manage.resources
 C:\WinForm_Class_Captain\Class_Captain\Class_Captain\obj\Debug\Class_Captain.changeseat.resources
 C:\WinForm_Class_Captain\Class_Captain\Class_Captain\obj\Debug\Class_Captain.notication.resources
+C:\WinForm_Class_Captain\Class_Captain\Class_Captain\obj\Debug\Class_Captain.csproj.ResolveComReference.cache

@@ -53,12 +53,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.resetbtn = new System.Windows.Forms.Button();
             this.deadline = new System.Windows.Forms.DateTimePicker();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.excelbtn = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -309,21 +312,21 @@
             this.deadline.Size = new System.Drawing.Size(329, 25);
             this.deadline.TabIndex = 26;
             // 
-            // radioButton2
+            // excelbtn
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(866, 655);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(65, 19);
-            this.radioButton2.TabIndex = 28;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Excel";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.excelbtn.AutoSize = true;
+            this.excelbtn.Location = new System.Drawing.Point(6, 10);
+            this.excelbtn.Name = "excelbtn";
+            this.excelbtn.Size = new System.Drawing.Size(65, 19);
+            this.excelbtn.TabIndex = 28;
+            this.excelbtn.Text = "Excel";
+            this.excelbtn.UseVisualStyleBackColor = true;
             // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(947, 655);
+            this.radioButton1.Checked = true;
+            this.radioButton1.Location = new System.Drawing.Point(77, 10);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(88, 19);
             this.radioButton1.TabIndex = 29;
@@ -331,13 +334,22 @@
             this.radioButton1.Text = "선택안함";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.excelbtn);
+            this.groupBox3.Controls.Add(this.radioButton1);
+            this.groupBox3.Location = new System.Drawing.Point(856, 654);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(172, 37);
+            this.groupBox3.TabIndex = 5;
+            this.groupBox3.TabStop = false;
+            // 
             // notication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 720);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.resetbtn);
             this.Controls.Add(this.deadline);
             this.Controls.Add(this.label5);
@@ -366,6 +378,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -397,7 +411,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button resetbtn;
         private System.Windows.Forms.DateTimePicker deadline;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton excelbtn;
         private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
