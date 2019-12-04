@@ -200,7 +200,6 @@ namespace Class_Captain
 
         private void check1_Click(object sender, EventArgs e)
         {
-            /*
             string sql = "UPDATE notification SET check1 = NULL WHERE check1 is not null;";
             adapter1.UpdateCommand = new MySqlCommand(sql, conn);
             adapter1.Update(dataSet1, "notification");
@@ -208,7 +207,7 @@ namespace Class_Captain
             try
             {
                 conn.Open();
-                SaveExcelFile();
+                SaveExcelFile(1);
                 adapter1.UpdateCommand.ExecuteNonQuery();
                 dataSet1.Clear();  // 이전 데이터 지우기
                 adapter1.Fill(dataSet1, "notification");
@@ -221,9 +220,7 @@ namespace Class_Captain
             finally
             {
                 conn.Close();
-            }
-            */
-            SaveExcelFile(3);
+            }        
         }
 
         private void SaveExcelFile(int num)
@@ -269,14 +266,16 @@ namespace Class_Captain
                 }
             }
             // 2-2 행 데이터 저장 
+            Boolean flag = true;
             for (int i = 0; i < dataSet1.Tables["notification"].Rows.Count; i++)
             {
+                flag = true;
+                jump = 0;
                 for (int j = 0; j < dataSet1.Tables["notification"].Columns.Count; j++)
                 {
-                    jump = 0;
-                    if (j == 0 || j == 1 || j + 2 == num)
+                    if (j == 0 || j == 1 || j - 2 == num)//j == 2 num = 1 j == 3 num2
                     {
-                        dataArr[i + 1, j-jump] = dataSet1.Tables["notification"].Rows[i].ItemArray[j].ToString();
+                        dataArr[i + 1, j - jump] = dataSet1.Tables["notification"].Rows[i].ItemArray[j].ToString();
                     }
                     else
                     {
@@ -296,15 +295,15 @@ namespace Class_Captain
 
         private void check2_Click(object sender, EventArgs e)
         {
-            string sql = "UPDATE notification SET check2 = NULL WHERE check2 is not null;";
+            string sql = "UPDATE notification SET check1 = NULL WHERE check1 is not null;";
             adapter1.UpdateCommand = new MySqlCommand(sql, conn);
             adapter1.Update(dataSet1, "notification");
 
             try
             {
                 conn.Open();
+                SaveExcelFile(2);
                 adapter1.UpdateCommand.ExecuteNonQuery();
-
                 dataSet1.Clear();  // 이전 데이터 지우기
                 adapter1.Fill(dataSet1, "notification");
                 dataGridView1.DataSource = dataSet1.Tables["notification"];
@@ -321,15 +320,15 @@ namespace Class_Captain
 
         private void check3_Click(object sender, EventArgs e)
         {
-            string sql = "UPDATE notification SET check3 = NULL WHERE check3 is not null;";
+            string sql = "UPDATE notification SET check1 = NULL WHERE check1 is not null;";
             adapter1.UpdateCommand = new MySqlCommand(sql, conn);
             adapter1.Update(dataSet1, "notification");
 
             try
             {
                 conn.Open();
+                SaveExcelFile(3);
                 adapter1.UpdateCommand.ExecuteNonQuery();
-
                 dataSet1.Clear();  // 이전 데이터 지우기
                 adapter1.Fill(dataSet1, "notification");
                 dataGridView1.DataSource = dataSet1.Tables["notification"];
