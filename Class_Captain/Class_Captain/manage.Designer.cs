@@ -47,7 +47,9 @@
             this.reset = new System.Windows.Forms.Button();
             this.gender = new System.Windows.Forms.ComboBox();
             this.birth = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -226,11 +228,23 @@
             this.birth.Size = new System.Drawing.Size(143, 25);
             this.birth.TabIndex = 12;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(876, 529);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(44, 46);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 21;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // manage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(962, 780);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.birth);
             this.Controls.Add(this.gender);
             this.Controls.Add(this.reset);
@@ -254,6 +268,7 @@
             this.Text = "manage";
             this.Load += new System.EventHandler(this.manage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -279,5 +294,6 @@
         private System.Windows.Forms.Button reset;
         private System.Windows.Forms.ComboBox gender;
         private System.Windows.Forms.TextBox birth;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

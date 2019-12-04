@@ -294,5 +294,11 @@ namespace Class_Captain
             gender.SelectedIndex = -1;
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            dataSet1.Clear();
+            adapter1.Fill(dataSet1, "student");
+            dataGridView1.DataSource = dataSet1.Tables["student"];
+        }
     }
 }

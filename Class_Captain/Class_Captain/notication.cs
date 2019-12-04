@@ -376,6 +376,17 @@ namespace Class_Captain
             else MessageBox.Show("삽입하실 값을 전부 입력해주세요", "오류");
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            dataSet1.Clear();
+            adapter1.Fill(dataSet1, "notification");
+            dataGridView1.DataSource = dataSet1.Tables["notification"];
+
+            dataSet2.Clear();
+            adapter2.Fill(dataSet1, "notification_name");
+            dataGridView2.DataSource = dataSet1.Tables["notification_name"];
+        }
+
         private void notication_Load(object sender, EventArgs e)
         {
             string conadd = "server=localhost;port=3306;database=classstudent;uid=root;pwd=0000";

@@ -54,14 +54,12 @@ namespace Class_Captain
         private void set_seat()
         {
             List<int> randlist = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 };
-            for (i = 0; i < 20; ++i)
+            Random rand = new Random();
+            for (i = 0; i < 20; i++)
             {
-                Random rand = new Random();
-                    int r = rand.Next(20 - i);
-                    //MessageBox.Show(r+"  "+randlist[r] + "  " + student[randlist[r]]);
-                    //comstudent[i] = student[randlist[r]];
-                    comstudent[i] = student[randlist[r]];
-                    randlist.RemoveAt(r);
+                int r = rand.Next(randlist.Count());//20 - i);
+                comstudent[i] = student[randlist[r]];
+                randlist.RemoveAt(r);
             }
         }
 
