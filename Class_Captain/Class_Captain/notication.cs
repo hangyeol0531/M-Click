@@ -295,7 +295,7 @@ namespace Class_Captain
 
         private void check2_Click(object sender, EventArgs e)
         {
-            string sql = "UPDATE notification SET check1 = NULL WHERE check1 is not null;";
+            string sql = "UPDATE notification SET check2 = NULL WHERE check2 is not null;";
             adapter1.UpdateCommand = new MySqlCommand(sql, conn);
             adapter1.Update(dataSet1, "notification");
 
@@ -320,7 +320,7 @@ namespace Class_Captain
 
         private void check3_Click(object sender, EventArgs e)
         {
-            string sql = "UPDATE notification SET check1 = NULL WHERE check1 is not null;";
+            string sql = "UPDATE notification SET check3 = NULL WHERE check3 is not null;";
             adapter1.UpdateCommand = new MySqlCommand(sql, conn);
             adapter1.Update(dataSet1, "notification");
 

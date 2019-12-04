@@ -90,5 +90,30 @@ namespace Class_Captain
             }
             conn.Close();
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            set_seat();
+            label1.Text = comstudent[0];
+            label2.Text = comstudent[1];
+            label3.Text = comstudent[2];
+            label4.Text = comstudent[3];
+            label5.Text = comstudent[4];
+            label6.Text = comstudent[5];
+            label7.Text = comstudent[6];
+            label8.Text = comstudent[7];
+            label9.Text = comstudent[8];
+            label10.Text = comstudent[9];
+            label11.Text = comstudent[10];
+            label12.Text = comstudent[11];
+            label13.Text = comstudent[12];
+            label14.Text = comstudent[13];
+            label15.Text = comstudent[14];
+            label16.Text = comstudent[15];
+            label17.Text = comstudent[16];
+            label18.Text = comstudent[17];
+            label19.Text = comstudent[18];
+            label20.Text = comstudent[19];
+        }
     }
 }

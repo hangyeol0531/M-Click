@@ -52,10 +52,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("배달의민족 을지로체 TTF", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(143, 22);
+            this.label1.Font = new System.Drawing.Font("배달의민족 주아", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Location = new System.Drawing.Point(151, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(490, 93);
+            this.label1.Size = new System.Drawing.Size(465, 88);
             this.label1.TabIndex = 1;
             this.label1.Text = "Your Leader";
             // 
@@ -107,6 +107,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1580, 694);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button3);
@@ -114,6 +115,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "main";

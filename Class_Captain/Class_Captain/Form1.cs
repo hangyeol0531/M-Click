@@ -57,6 +57,7 @@ namespace Class_Captain
                 MessageBox.Show(ex.Message);
             }
             conn.Close();
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -65,6 +66,5 @@ namespace Class_Captain
             adapter1.Fill(dataSet1, "student");
             dataGridView1.DataSource = dataSet1.Tables["student"];
         }
-
     }
 }
