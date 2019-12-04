@@ -61,7 +61,7 @@
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("배달의민족 한나는 열한살", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button1.Font = new System.Drawing.Font("배달의민족 한나는 열한살", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button1.Location = new System.Drawing.Point(166, 143);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(419, 116);
@@ -72,7 +72,7 @@
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("배달의민족 한나는 열한살", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button2.Font = new System.Drawing.Font("배달의민족 한나는 열한살", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button2.Location = new System.Drawing.Point(166, 331);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(419, 116);
@@ -83,7 +83,7 @@
             // 
             // button3
             // 
-            this.button3.Font = new System.Drawing.Font("배달의민족 한나는 열한살", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button3.Font = new System.Drawing.Font("배달의민족 한나는 열한살", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button3.Location = new System.Drawing.Point(166, 527);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(419, 116);
@@ -107,7 +107,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1580, 694);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button3);
