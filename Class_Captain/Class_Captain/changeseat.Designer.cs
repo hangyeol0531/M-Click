@@ -57,7 +57,7 @@
             // 
             this.front.AutoSize = true;
             this.front.Font = new System.Drawing.Font("배달의민족 한나체 Pro", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.front.Location = new System.Drawing.Point(586, 27);
+            this.front.Location = new System.Drawing.Point(632, 14);
             this.front.Name = "front";
             this.front.Size = new System.Drawing.Size(168, 85);
             this.front.TabIndex = 0;
@@ -265,7 +265,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(601, 102);
+            this.button1.Location = new System.Drawing.Point(646, 102);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(146, 60);
             this.button1.TabIndex = 21;

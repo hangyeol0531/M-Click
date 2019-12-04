@@ -41,7 +41,7 @@
             this.rd2 = new System.Windows.Forms.RadioButton();
             this.rd3 = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.statebox = new System.Windows.Forms.ComboBox();
             this.insertbtn = new System.Windows.Forms.Button();
             this.updatebtn = new System.Windows.Forms.Button();
             this.deletebtn = new System.Windows.Forms.Button();
@@ -53,6 +53,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.resetbtn = new System.Windows.Forms.Button();
             this.deadline = new System.Windows.Forms.DateTimePicker();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -81,37 +83,43 @@
             // 
             // check1
             // 
+            this.check1.Font = new System.Drawing.Font("배달의민족 한나체 Pro", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.check1.Location = new System.Drawing.Point(6, 17);
             this.check1.Name = "check1";
             this.check1.Size = new System.Drawing.Size(96, 54);
             this.check1.TabIndex = 2;
             this.check1.Text = "check1";
             this.check1.UseVisualStyleBackColor = true;
+            this.check1.Click += new System.EventHandler(this.check1_Click);
             // 
             // check2
             // 
+            this.check2.Font = new System.Drawing.Font("배달의민족 한나체 Pro", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.check2.Location = new System.Drawing.Point(108, 17);
             this.check2.Name = "check2";
             this.check2.Size = new System.Drawing.Size(96, 54);
             this.check2.TabIndex = 3;
             this.check2.Text = "check2";
             this.check2.UseVisualStyleBackColor = true;
+            this.check2.Click += new System.EventHandler(this.check2_Click);
             // 
             // check3
             // 
+            this.check3.Font = new System.Drawing.Font("배달의민족 한나체 Pro", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.check3.Location = new System.Drawing.Point(210, 17);
             this.check3.Name = "check3";
             this.check3.Size = new System.Drawing.Size(96, 54);
             this.check3.TabIndex = 4;
             this.check3.Text = "check3";
             this.check3.UseVisualStyleBackColor = true;
+            this.check3.Click += new System.EventHandler(this.check3_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.check3);
             this.groupBox1.Controls.Add(this.check1);
             this.groupBox1.Controls.Add(this.check2);
-            this.groupBox1.Location = new System.Drawing.Point(780, 569);
+            this.groupBox1.Location = new System.Drawing.Point(780, 552);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(312, 85);
             this.groupBox1.TabIndex = 5;
@@ -121,7 +129,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("배달의민족 한나는 열한살", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(877, 538);
+            this.label1.Location = new System.Drawing.Point(875, 523);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 31);
             this.label1.TabIndex = 10;
@@ -130,11 +138,11 @@
             // change
             // 
             this.change.Font = new System.Drawing.Font("배달의민족 한나체 Pro", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.change.Location = new System.Drawing.Point(908, 372);
+            this.change.Location = new System.Drawing.Point(1044, 377);
             this.change.Name = "change";
-            this.change.Size = new System.Drawing.Size(143, 81);
+            this.change.Size = new System.Drawing.Size(63, 104);
             this.change.TabIndex = 5;
-            this.change.Text = "상태 변경";
+            this.change.Text = "저장";
             this.change.UseVisualStyleBackColor = true;
             this.change.Click += new System.EventHandler(this.change_Click);
             // 
@@ -176,23 +184,24 @@
             this.groupBox2.Controls.Add(this.rd2);
             this.groupBox2.Controls.Add(this.rd3);
             this.groupBox2.Controls.Add(this.rd1);
-            this.groupBox2.Location = new System.Drawing.Point(813, 367);
+            this.groupBox2.Location = new System.Drawing.Point(773, 365);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(93, 81);
+            this.groupBox2.Size = new System.Drawing.Size(265, 93);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             // 
-            // comboBox1
+            // statebox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "연장",
-            "O",
-            "X"});
-            this.comboBox1.Location = new System.Drawing.Point(816, 453);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(235, 23);
-            this.comboBox1.TabIndex = 15;
+            this.statebox.FormattingEnabled = true;
+            this.statebox.Items.AddRange(new object[] {
+            " ",
+            "          O",
+            "          X",
+            "        연장"});
+            this.statebox.Location = new System.Drawing.Point(773, 458);
+            this.statebox.Name = "statebox";
+            this.statebox.Size = new System.Drawing.Size(265, 23);
+            this.statebox.TabIndex = 15;
             // 
             // insertbtn
             // 
@@ -300,11 +309,35 @@
             this.deadline.Size = new System.Drawing.Size(329, 25);
             this.deadline.TabIndex = 26;
             // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(866, 655);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(65, 19);
+            this.radioButton2.TabIndex = 28;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Excel";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(947, 655);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(88, 19);
+            this.radioButton1.TabIndex = 29;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "선택안함";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
             // notication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 720);
+            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.resetbtn);
             this.Controls.Add(this.deadline);
             this.Controls.Add(this.label5);
@@ -316,7 +349,7 @@
             this.Controls.Add(this.deletebtn);
             this.Controls.Add(this.updatebtn);
             this.Controls.Add(this.insertbtn);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.statebox);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.change);
             this.Controls.Add(this.label1);
@@ -352,7 +385,7 @@
         private System.Windows.Forms.RadioButton rd2;
         private System.Windows.Forms.RadioButton rd3;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox statebox;
         private System.Windows.Forms.Button insertbtn;
         private System.Windows.Forms.Button updatebtn;
         private System.Windows.Forms.Button deletebtn;
@@ -364,5 +397,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button resetbtn;
         private System.Windows.Forms.DateTimePicker deadline;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }
