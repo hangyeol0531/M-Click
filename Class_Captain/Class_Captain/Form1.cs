@@ -66,5 +66,15 @@ namespace Class_Captain
             adapter1.Fill(dataSet1, "student");
             dataGridView1.DataSource = dataSet1.Tables["student"];
         }
+
+        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dataGridView1.Columns[0].HeaderText = "번호";
+            dataGridView1.Columns[1].HeaderText = "성명";
+            dataGridView1.Columns[2].HeaderText = "성별";
+            dataGridView1.Columns[3].HeaderText = "연락처";
+            dataGridView1.Columns[4].HeaderText = "생년월일";
+            dataGridView1.Columns[5].HeaderText = "역할";
+        }
     }
 }

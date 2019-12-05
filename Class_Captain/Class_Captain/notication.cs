@@ -228,76 +228,6 @@ namespace Class_Captain
             }        
         }
 
-        private void SaveExcelFile(int num)
-        {
-            if (excelbtn.Checked)
-            {
-                saveFileDialog1.Filter = "엑셀 파일(*.xlsx)|*.xlsx";
-                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-                {
-                    SaveTextExcel(saveFileDialog1.FileName, num);
-                }
-            }
-        }
-
-        private void SaveTextExcel(string filePath, int num)
-        {
-            //1.엑셀 사용에 필요한 객체 생성
-            num = num - 1;
-            int jump = 0;
-            Excel.Application eApp; //엑셀 프로그램
-            Excel.Workbook eWorkbook; // 엑셀 시트를 여러개 포함하는 단위
-            Excel.Worksheet eWorksheet; //엑셀 워크시트
-            eApp = new Excel.Application();
-            eWorkbook = eApp.Workbooks.Add();  // eApp에 워크북 추가
-            eWorksheet = eWorkbook.Sheets[1];  // 엑셀 워크시트는 Index가 1부터 시작한다.
-            //2. 엑셀에 저장할 데이터를 2차원 배열 형태로 준비
-            string[,] dataArr;
-            int colCount = dataSet1.Tables["notification"].Columns.Count + 1;
-            int rowCount = dataSet1.Tables["notification"].Rows.Count + 1;
-            dataArr = new string[rowCount, colCount];
-
-            // 2-1 Column 이름 저장
-            for (int i = 0; i < dataSet1.Tables["notification"].Columns.Count; i++)
-            {
-                if (i == num + 2 || i <= 1)
-                {
-                    dataArr[0, i - jump] = dataSet1.Tables["notification"].Columns[i].ColumnName;//이름
-                }
-                else
-                {
-                    jump++;
-                    continue;
-                }
-            }
-            // 2-2 행 데이터 저장 
-            Boolean flag = true;
-            for (int i = 0; i < dataSet1.Tables["notification"].Rows.Count; i++)
-            {
-                flag = true;
-                jump = 0;
-                for (int j = 0; j < dataSet1.Tables["notification"].Columns.Count; j++)
-                {
-                    if (j == 0 || j == 1 || j - 2 == num)//j == 2 num = 1 j == 3 num2
-                    {
-                        dataArr[i + 1, j - jump] = dataSet1.Tables["notification"].Rows[i].ItemArray[j].ToString();
-                    }
-                    else
-                    {
-                        jump++;
-                    }
-                }
-            }
-            // 3. 주입된 데이터를 엑셀파일에 저장
-            string endCell = $"E{rowCount}";
-            eWorksheet.get_Range("A1:" + endCell).Value = dataArr;
-
-            eWorkbook.SaveAs(filePath, Excel.XlFileFormat.xlWorkbookDefault, Type.Missing, Type.Missing,
-                false, false, Excel.XlSaveAsAccessMode.xlShared, false, false, Type.Missing, Type.Missing);
-            eWorkbook.Close(false, Type.Missing, Type.Missing);
-            eApp.Quit();
-        }
-
         private void check2_Click(object sender, EventArgs e)
         {
             string sql = "UPDATE notification SET check2 = NULL WHERE check2 is not null;";
@@ -347,6 +277,80 @@ namespace Class_Captain
                 conn.Close();
             }
         }
+
+        private void SaveExcelFile(int num)
+        {
+            if (excelbtn.Checked)
+            {
+                saveFileDialog1.Filter = "엑셀 파일(*.xlsx)|*.xlsx";
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    SaveTextExcel(saveFileDialog1.FileName, num);
+                }
+            }
+        }
+
+        private void SaveTextExcel(string filePath, int num)
+        {
+            //1.엑셀 사용에 필요한 객체 생성
+            num = num - 1;
+            int jump = 0;
+            Excel.Application eApp; //엑셀 프로그램
+            Excel.Workbook eWorkbook; // 엑셀 시트를 여러개 포함하는 단위
+            Excel.Worksheet eWorksheet; //엑셀 워크시트
+            eApp = new Excel.Application();
+            eWorkbook = eApp.Workbooks.Add();  // eApp에 워크북 추가
+            eWorksheet = eWorkbook.Sheets[1];  // 엑셀 워크시트는 Index가 1부터 시작한다.
+            //2. 엑셀에 저장할 데이터를 2차원 배열 형태로 준비
+            string[,] dataArr;
+            int colCount = dataSet1.Tables["notification"].Columns.Count + 1;
+            int rowCount = dataSet1.Tables["notification"].Rows.Count + 1;
+            dataArr = new string[rowCount, colCount];
+
+            // 2-1 Column 이름 저장
+            dataArr[0, 0] = "번호";
+            dataArr[0, 1] = "이름";
+            if(num == 0)
+            {
+                dataArr[0, 2] = check1.Text;
+            }
+            else if(num == 1)
+            {
+                dataArr[0, 2] = check2.Text;
+            }
+            else if(num == 2)
+            {
+                 dataArr[0, 2] = check3.Text;
+            }
+
+            // 2-2 행 데이터 저장 
+            Boolean flag = true;
+            for (int i = 0; i < dataSet1.Tables["notification"].Rows.Count; i++)
+            {
+                flag = true;
+                jump = 0;
+                for (int j = 0; j < dataSet1.Tables["notification"].Columns.Count; j++)
+                {
+                    if (j == 0 || j == 1 || j - 2 == num)//j == 2 num = 1 j == 3 num2
+                    {
+                        dataArr[i + 1, j - jump] = dataSet1.Tables["notification"].Rows[i].ItemArray[j].ToString();
+                    }
+                    else
+                    {
+                        jump++;
+                    }
+                }
+            }
+            // 3. 주입된 데이터를 엑셀파일에 저장
+            string endCell = $"E{rowCount}";
+            eWorksheet.get_Range("A1:" + endCell).Value = dataArr;
+
+            eWorkbook.SaveAs(filePath, Excel.XlFileFormat.xlWorkbookDefault, Type.Missing, Type.Missing,
+                false, false, Excel.XlSaveAsAccessMode.xlShared, false, false, Type.Missing, Type.Missing);
+            eWorkbook.Close(false, Type.Missing, Type.Missing);
+            eApp.Quit();
+        }
+
 
         private void insertbtn_Click(object sender, EventArgs e)
         {
@@ -420,6 +424,22 @@ namespace Class_Captain
                 MessageBox.Show(ex.Message);
             }
             conn.Close();
+        }
+
+        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dataGridView1.Columns[0].HeaderText = "번호";
+            dataGridView1.Columns[1].HeaderText = "이름";
+            dataGridView1.Columns[2].HeaderText = "안내장1";
+            dataGridView1.Columns[3].HeaderText = "안내장2";
+            dataGridView1.Columns[4].HeaderText = "안내장3";
+        }
+
+        private void dataGridView2_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dataGridView2.Columns[0].HeaderText = "번호";
+            dataGridView2.Columns[1].HeaderText = "제목";
+            dataGridView2.Columns[2].HeaderText = "마감일";
         }
 
         private void reportprintset()
