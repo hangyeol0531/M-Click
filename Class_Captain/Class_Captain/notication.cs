@@ -95,6 +95,9 @@ namespace Class_Captain
                 else MessageBox.Show("고유ID는 변경할 수 없습니다.", "오류");
             }
             else MessageBox.Show("변경하실 값을 입력해주세요.", "오류");
+            inputtitle();
+            reportprintset();
+
         }
 
         private void deletebtn_Click(object sender, EventArgs e)
@@ -114,6 +117,8 @@ namespace Class_Captain
             dataSet2.Clear();
             adapter2.Fill(dataSet2, "notification_name");
             dataGridView2.DataSource = dataSet2.Tables["notification_name"];
+            inputtitle();
+            reportprintset();
             conn.Close();
         }
 
@@ -374,6 +379,8 @@ namespace Class_Captain
                 }
             }
             else MessageBox.Show("삽입하실 값을 전부 입력해주세요", "오류");
+            inputtitle();
+            reportprintset();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -403,13 +410,7 @@ namespace Class_Captain
             dataGridView2.DataSource = dataSet2.Tables["notification_name"];
 
             inputtitle();
-            rd1.Text = title[0];
-            rd2.Text = title[1];
-            rd3.Text = title[2];
-
-            check1.Text = title[0];
-            check2.Text = title[1];
-            check3.Text = title[2];
+            reportprintset();
             try
             {
                 conn.Open();
@@ -419,6 +420,17 @@ namespace Class_Captain
                 MessageBox.Show(ex.Message);
             }
             conn.Close();
+        }
+
+        private void reportprintset()
+        {
+            rd1.Text = title[0];
+            rd2.Text = title[1];
+            rd3.Text = title[2];
+
+            check1.Text = title[0];
+            check2.Text = title[1];
+            check3.Text = title[2];
         }
 
         private void inputtitle()

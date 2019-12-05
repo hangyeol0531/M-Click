@@ -202,7 +202,7 @@
             " ",
             "          O",
             "          X",
-            "        연장"});
+            "        연기"});
             this.statebox.Location = new System.Drawing.Point(773, 458);
             this.statebox.Name = "statebox";
             this.statebox.Size = new System.Drawing.Size(265, 23);
@@ -222,7 +222,7 @@
             // updatebtn
             // 
             this.updatebtn.Font = new System.Drawing.Font("배달의민족 한나는 열한살", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.updatebtn.Location = new System.Drawing.Point(1088, 74);
+            this.updatebtn.Location = new System.Drawing.Point(1088, 71);
             this.updatebtn.Name = "updatebtn";
             this.updatebtn.Size = new System.Drawing.Size(89, 40);
             this.updatebtn.TabIndex = 17;
@@ -384,7 +384,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "notication";
-            this.Text = "notication";
+            this.Text = "안내장 관리";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.notication_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

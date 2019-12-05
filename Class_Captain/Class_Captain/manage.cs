@@ -171,7 +171,7 @@ namespace Class_Captain
                 adapter1.InsertCommand.Parameters.AddWithValue("@gender", gender.Text);
                 adapter1.InsertCommand.Parameters.AddWithValue("@phone", phone.Text);
                 adapter1.InsertCommand.Parameters.AddWithValue("@birth", birth.Text);
-                adapter1.InsertCommand.Parameters.AddWithValue("@position", position.Text);
+                adapter1.InsertCommand.Parameters.AddWithValue("@position", position.Text.ToString());
 
                 try
                 {
@@ -248,9 +248,8 @@ namespace Class_Captain
                         if (name.Text != "") findRows[i]["name"] = (string)dataGridView1.SelectedRows[i].Cells["name"].Value;
                         if (gender.Text != "") findRows[i]["gender"] = (string)dataGridView1.SelectedRows[i].Cells["gender"].Value;
                         if (phone.Text != "") findRows[i]["phone"] = (string)dataGridView1.SelectedRows[i].Cells["phone"].Value;
-                        if (birth.Text != "") findRows[i]["birth"] = (string)dataGridView1.SelectedRows[i].Cells["birth"].Value;
-                        if (position.Text != "") findRows[i]["position"] = (string)dataGridView1.SelectedRows[i].Cells["position"].Value;
-
+                        if (birth.Text != "") findRows[i]["birth"] = (DateTime)dataGridView1.SelectedRows[i].Cells["birth"].Value;
+                        if (position.Text.ToString() != "") findRows[i]["position"] = (string)dataGridView1.SelectedRows[i].Cells["position"].Value;
                     }
                     adapter1.Update(dataSet1, "student");
                     //MessageBox.Show("UPDATE 완료!");
