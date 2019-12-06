@@ -76,5 +76,23 @@ namespace Class_Captain
             dataGridView1.Columns[4].HeaderText = "생년월일";
             dataGridView1.Columns[5].HeaderText = "역할";
         }
+
+        private void pibt1_Click(object sender, EventArgs e)
+        {
+            manage form2 = new manage();
+            form2.Show();
+        }
+
+        private void pibt2_Click(object sender, EventArgs e)
+        {
+            changeseat form3 = new changeseat();
+            form3.Show();
+        }
+
+        private void pibt3_Click(object sender, EventArgs e)
+        {
+            notication form4 = new notication();
+            form4.Show();
+        }
     }
 }
