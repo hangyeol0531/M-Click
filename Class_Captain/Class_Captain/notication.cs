@@ -288,7 +288,7 @@ namespace Class_Captain
                 {
                     SaveTextExcel(saveFileDialog1.FileName, num);
                 }
-            }else if (rbtxt.Checked)
+            }else if (rbtext.Checked)
             {
                 saveFileDialog1.Filter = "텍스트 파일(*.txt)|*.txt";
                 if (saveFileDialog1.ShowDialog() == DialogResult.OK)
