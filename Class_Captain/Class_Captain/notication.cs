@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -287,6 +288,43 @@ namespace Class_Captain
                 {
                     SaveTextExcel(saveFileDialog1.FileName, num);
                 }
+            }else if (rbtxt.Checked)
+            {
+                saveFileDialog1.Filter = "텍스트 파일(*.txt)|*.txt";
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    TextFileSave(saveFileDialog1.FileName, num);
+                }
+            }
+        }
+
+        private void TextFileSave(string fileName, int num)
+        {
+            // SaveFileDialog에 지정한 파일경로에 Stream 생성
+            using (StreamWriter sw = new StreamWriter(saveFileDialog1.FileName))
+            {
+                // Column Title 한번 출력
+                int count = 0;
+                foreach (DataColumn col in dataSet1.Tables["notification"].Columns)
+                {
+                    if (count == 0 || count == 1 || count == num + 1)sw.Write($"{col.ColumnName}\t");
+                    count++;
+                }
+                sw.WriteLine();
+                count = 0;
+                // DataGridView에 기록된 모든 파일 정보를 Text파일에 출력
+                foreach (DataRow row in dataSet1.Tables["notification"].Rows)
+                {
+                    string rowString = "";
+                    foreach (var item in row.ItemArray)
+                    {
+                        if (count == 0 || count == 1 || count == num + 1) rowString += item.ToString() + "\t";
+                        count++;
+                    }
+                    sw.WriteLine(rowString);
+                    count = 0;
+                }
+                sw.Close();
             }
         }
 
