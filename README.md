@@ -1,4 +1,4 @@
-# WinForm_Class_Captain
-GSM 반장 반관리 시스템 
+# M-Click
+GSM 반장/부장 학생 관리 시스템 
 
 
