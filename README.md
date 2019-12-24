@@ -26,6 +26,6 @@ txt는 아래 사진과 같이 저장할 수 있습니다.<br>
 <br>
 ## Excel<br>
 Excel는 아래 사진과 같이 저장할 수 있습니다.<br>
-<img width = "500" height = "400" src = "https://user-images.githubusercontent.com/41174265/71388240-d6af6900-263a-11ea-8c54-55599f03de1e.PNG">
+<img width = "500" height = "550" src = "https://user-images.githubusercontent.com/41174265/71388240-d6af6900-263a-11ea-8c54-55599f03de1e.PNG">
 
 
