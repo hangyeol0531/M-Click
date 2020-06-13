@@ -1,4 +1,4 @@
-# M-Click(C#.Net WinForm)
+# M-Click(C#.Net WinForm / Mysql )
 ### GSM 반장/부장 학생 또는 다양한 화원 데이터 관리 시스템 
 각 반장 또는 부장들의 불편함을 찾아 이를 해소할 만한 SW를 C# .New Framwork Winform과 Mysql을 사용하였습니다.
 <br><br>
